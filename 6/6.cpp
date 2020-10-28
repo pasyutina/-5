@@ -1,16 +1,16 @@
 ﻿using namespace std;
 #include <iostream>
 
-double Km(double x)
-{
-	double a = x * 1.609;
-	return a;
-}
-
 double Ft(double x)
 {
 	double b = x * 5280.002;
 	return b;
+}
+
+double Km(double x)
+{
+	double a = x * 1.609;
+	return a;
 }
 
 int main()
