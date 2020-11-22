@@ -1,33 +1,34 @@
-﻿#pragma warning(default:4716)
-using namespace std;
+﻿using namespace std;
 #include <iostream>
-
-int Palindrom(int x)
-{
-    if (x >= 10000 && x <= 99999)
-    {
-        if ((x / 10) % 10 == (x / 1000) % 10 && x % 10 == x / 10000)
-        {
-            cout << "Введенное число - палиндром" << endl;
-        }
-        else
-        {
-            cout << "Введенное число - не палиндром" << endl;
-        }
-    }
-    else
-    {
-        cout << "Введенное число не пятизначное!!!" << endl;
-    }
-    return x;
-}
+#include <ctime>
 
 int main()
 {
-    setlocale(0, "");
-    int x;
-    cout << "Введите x: ";
-    cin >> x;
-    Palindrom(x);
-    return 0;
+	setlocale(0, "");
+	const int n = 5, m = 5;
+	srand(time(NULL));
+	int a[n][m];
+
+	for (int i = 0; i < n; ++i) { //Выводим на экран строку i
+		for (int j = 0; j < m; ++j)
+		{
+			a[i][j] = rand() % 5;
+			cout.width(3);
+			cout << a[i][j] << " ";
+
+		}
+		cout << endl; //Строка завершается символом перехода на новую строку
+	}
+	int k = 0;
+	for (int i = 0; i < n; i++)//Нахождение максимального элемента
+	{
+		for (int j = 0; j < m; j++)
+		{
+			if (a[i][j] % 2 != 0)
+			{
+				k++;
+			}
+		}
+	}
+	cout << "Количество нечетных чисел = " << k << endl;
 }

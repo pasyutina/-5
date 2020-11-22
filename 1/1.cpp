@@ -2,35 +2,30 @@
 using namespace std;
 #include <iostream>
 
-bool Prostchis(int k)
-{
-	if (k < 1)
-		return false;
-	for (int i = 2; i * i <= k; ++i)
-	{
-		if (k % i == 0)
-		{
-			return false;
-		}
-		return true;
-	}
-}
-
 int main()
 {
-	setlocale(0, "");
-	int a = 1;
-	int b = 200;
-	int c = 1;
-	for (int i = a; i <= b; i++)
-	{
-		if (Prostchis(i))
-		{
-			if (i > c)
-				cout << i << " ";
-		}
-	}
-	return 0;
+    int n, m;
+    cin >> n >> m;
+    int a[100][100];
+
+    // чтение
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            cin >> a[i][j];
+        }
+    }
+    int max = a[0][0], max_i = 0, max_j = 0;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            if (a[i][j] > max) {
+                max = a[i][j];
+                max_i = i;
+                max_j = j;
+            }
+        }
+    }
+    cout << max_i << " " << max_j;
+    return 0;
 }
 
 

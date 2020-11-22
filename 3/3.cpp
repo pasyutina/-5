@@ -1,21 +1,28 @@
 ﻿using namespace std;
 #include <iostream>
 
-double SredA(double a, double b, double c)
-{
-    double x = (a + b + c) / 3;
-    return x;
-}
 
 int main()
 {
 	setlocale(0, "");
-	double a;
-	double b;
-	double c;
-	cout << "Введите числа a, b, c: ";
-	cin >> a >> b >> c;
-	double x = SredA(a, b, c);
-	cout << "Среднее арифметичесткое трех чисел = " << x;
-	return 0;
+    const int n = 10;
+    int a[n][n] = { 0 };
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            a[i][j] = rand() % 10;
+            cout << a[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    int sum = 0;
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
+            if (i == j)
+                sum += a[i][i];
+    cout << "Сумма элементов главной диагонали sum = " << sum << endl;
+    system("pause>>null");
+    return 0;
 }

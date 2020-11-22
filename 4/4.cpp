@@ -1,21 +1,37 @@
-﻿#define _USE_MATH_DEFINES
-#include <math.h>
-using namespace std;
-#include <iostream>
+﻿#include <iostream>
+#include<ctime>
 
-double Square(double r)
-{
-	double S = M_PI * pow(r, 2);
-	return S;
-}
+using namespace std;
 
 int main()
 {
 	setlocale(0, "");
-	double r;
-	cout << "Введите радиус окружности: ";
-	cin >> r;
-	double S = Square(r);
-	cout << "Число в градусах = " << S << endl;
-	return 0;
+	int c;
+	cout << "Введите число от 0 до 10: ";
+	cin >> c;
+
+	const int N = 2, M = 5;
+	int a[N][M] = {};
+	srand(time(NULL));
+	for (int i = 0; i < N; ++i)
+	{
+		for (int j = 0; j < M; ++j)
+		{
+			a[i][j] = rand() % 10;
+			cout << a[i][j] << " ";
+		}
+		cout << "\n";
+	}
+	cout << "\n";
+	int e;
+	for (int i = 0; i < N; ++i)
+	{
+		for (int j = 0; j < M; ++j)
+			if (a[i][j] > c)
+			{
+				e = (i, j);
+				cout << e << " ";
+			}
+	}
+	cout << "\n";
 }

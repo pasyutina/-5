@@ -1,27 +1,38 @@
-﻿using namespace std;
-#include <iostream>
+﻿#include <iostream>
+#include <ctime>
 
-double Ft(double x)
-{
-	double b = x * 5280.002;
-	return b;
-}
-
-double Km(double x)
-{
-	double a = x * 1.609;
-	return a;
-}
+using namespace std;
 
 int main()
 {
 	setlocale(0, "");
-	double x;
-	cout << "Введите x: ";
-	cin >> x;
-	double a = Km(x);
-	double b = Ft(x);
-	cout << a << " км" << endl;
-	cout << b << " фт" << endl;
-	return 0;
+	int c;
+	cout << "Введите число от 0 до 10: ";
+	cin >> c;
+
+	const int N = 2, M = 5;
+	int a[N][M] = {};
+	srand(time(NULL));
+	for (int i = 0; i < N; ++i)
+	{
+		for (int j = 0; j < M; ++j)
+		{
+			a[i][j] = rand() % 10 + 1;
+			cout << a[i][j] << " ";
+		}
+		cout << "\n";
+	}
+	cout << "\n";
+	for (int i = 0; i < N; ++i)
+	{
+		for (int j = 0; j < M; ++j)
+		{
+			if (a[i][j] < c)
+			{
+				a[i][j] = c;
+			}
+			cout << a[i][j] << " ";
+		}
+		cout << "\n";
+	}
 }
