@@ -17,7 +17,8 @@ int main()
     int max = a[0][0], max_i = 0, max_j = 0;
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
-            if (a[i][j] > max) {
+            if (a[i][j] > max) 
+            {
                 max = a[i][j];
                 max_i = i;
                 max_j = j;

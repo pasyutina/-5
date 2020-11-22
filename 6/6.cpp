@@ -15,7 +15,7 @@ int main()
 	srand(time(NULL));
 	for (int i = 0; i < N; ++i)
 	{
-		for (int j = 0; j < M; ++j)
+		for (int j = 0; j < M; ++j) //Вывод на экран строки i
 		{
 			a[i][j] = rand() % 10 + 1;
 			cout << a[i][j] << " ";
@@ -27,9 +27,9 @@ int main()
 	{
 		for (int j = 0; j < M; ++j)
 		{
-			if (a[i][j] < c)
+			if (a[i][j] < c) // поиск элементов меньше заданного числа
 			{
-				a[i][j] = c;
+				a[i][j] = c; // замена элементов меньше заданного числа данным числом
 			}
 			cout << a[i][j] << " ";
 		}
